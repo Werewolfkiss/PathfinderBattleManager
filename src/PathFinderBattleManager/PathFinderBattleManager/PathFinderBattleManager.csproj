@@ -38,9 +38,17 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Exceptions\EncounterNeedsANameException.cs" />
+    <Compile Include="Gateways\EncounterGateway.cs" />
+    <Compile Include="Gateways\ICharacterGateway.cs" />
+    <Compile Include="Gateways\IEncounterGateway.cs" />
+    <Compile Include="Gateways\IMobGateway.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Character.cs" />
+    <Compile Include="Models\Encounter.cs" />
+    <Compile Include="Models\Mob.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
