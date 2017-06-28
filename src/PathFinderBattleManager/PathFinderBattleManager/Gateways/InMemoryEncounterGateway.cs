@@ -8,7 +8,7 @@ using PathFinderBattleManager.Models;
 
 namespace PathFinderBattleManager.Gateways
 {
-    public class EncounterGateway : IEncounterGateway
+    public class InMemoryEncounterGateway : IEncounterGateway
     {
         private List<Encounter> encounters = new List<Encounter>();
 

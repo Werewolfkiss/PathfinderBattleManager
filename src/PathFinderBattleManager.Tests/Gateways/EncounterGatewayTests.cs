@@ -15,7 +15,7 @@ namespace PathFinderBattleManager.Tests.Gateways
         [TestMethod]
         public void CanCreateEncounter()
         {
-            gateway = new EncounterGateway();
+            gateway = new InMemoryEncounterGateway();
             gateway.CreateEncounter(Guid.NewGuid(), "Name");
         }
 
@@ -23,14 +23,14 @@ namespace PathFinderBattleManager.Tests.Gateways
         [ExpectedException(typeof(EncounterNeedsANameException))]
         public void CantCreateEncounterWithoutName()
         {
-            gateway = new EncounterGateway();
+            gateway = new InMemoryEncounterGateway();
             gateway.CreateEncounter(Guid.NewGuid(), null);
         }
 
         [TestMethod]
         public void CanRetrieveCreatedEncounter()
         {
-            gateway = new EncounterGateway();
+            gateway = new InMemoryEncounterGateway();
             var id = Guid.NewGuid();
             gateway.CreateEncounter(id, "Name");
             var encounter = gateway.RetrieveEncounter(id);
@@ -41,7 +41,7 @@ namespace PathFinderBattleManager.Tests.Gateways
         [TestMethod]
         public void EncountersShouldBeUniquelyIdentifiable()
         {
-            gateway = new EncounterGateway();
+            gateway = new InMemoryEncounterGateway();
             var id = Guid.NewGuid();
             gateway.CreateEncounter(id, "Name");
             gateway.CreateEncounter(Guid.NewGuid(), "Name");
@@ -53,7 +53,7 @@ namespace PathFinderBattleManager.Tests.Gateways
         [TestMethod]
         public void CanAddPCsToEncounter()
         {
-            gateway = new EncounterGateway();
+            gateway = new InMemoryEncounterGateway();
             var id = Guid.NewGuid();
             gateway.CreateEncounter(id, "Name");
             gateway.AddCharacterToEncounter(id, new Character() { Name = "Player1", Hp = 15, Initiative = 14 });
